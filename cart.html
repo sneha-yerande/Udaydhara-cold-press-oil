@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Poppins:wght@100..900&display=swap" rel="stylesheet" />
+  <title>My Cart - Udaydhara</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+     <header class="top-bar">
+        <div id="cart">
+      <a href="cart.html" style="text-decoration: none; color: inherit;">
+        <i class="fa fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+      </a>
+    </div>
+    <div class="search-container">
+            <input type="text" placeholder="Search store..." />
+            <button><i class="fa fa-magnifying-glass"></i></button>
+        </div>
+        <div class="logo"> 
+            <img src="/projectimgs/udaydhara.png" alt="udaydhara logo" />
+            <span class="brand-name">Golden Haritage Organic</span>
+        </div>
+        <div class="user-options">
+            <a href="login.html"><i class="fa fa-sign-in-alt"></i> Sign in</a>
+            <span>|</span>
+            <a href="createacc.html"><i class="fa fa-user-plus"></i> Create account</a>
+        </div>
+    </header>
+
+    <nav class="menu">
+        
+        <div class="center">
+            <a href="home.html">HOME</a> 
+            <a href="aboutus.html">ABOUT US</a> 
+            <a href="heathtips.html">HEALTH TIPS</a>
+      
+        </div>
+    </nav>
+  <h1>My Cart</h1>
+  <div id="cart-items"></div>
+
+ <div id="total-price">Total: ₹0</div>
+<button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+
+
+  <div class="qr-section">
+ <h3>Scan & Pay</h3>
+  <button onclick="confirmPayment()" class="paid-btn">Pay</button>
+</div>
+
+
+  <script>
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function displayCart() {
+      const cartItemsDiv = document.getElementById("cart-items");
+      cartItemsDiv.innerHTML = "";
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+        document.getElementById("total-price").innerText = "";
+        return;
+      }
+
+      let total = 0;
+
+    cart.forEach((item, index) => {
+  const itemTotal = item.price * item.quantity;
+  total += itemTotal;
+
+  cartItemsDiv.innerHTML += `
+    <div class="cart-item">
+      <h3>${item.name}</h3>
+      <p>Price: ₹${item.price}</p>
+      <div class="qty-controls">
+        <button onclick="changeQty(${index}, -1)">−</button>
+        <span>${item.quantity}</span>
+        <button onclick="changeQty(${index}, 1)">+</button>
+      </div>
+      <p>Total: ₹${itemTotal}</p>
+      <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
+    </div>
+  `;
+});
+
+
+      document.getElementById("total-price").innerText = "Total Amount: ₹" + total;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      displayCart();
+    }
+
+    function changeQty(index, change) {
+  if (cart[index].quantity + change >= 1) {
+    cart[index].quantity += change;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+  }
+}
+
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      cart = [];
+      displayCart();
+    }
+
+    displayCart();
+
+function confirmPayment() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (!loggedInUser) {
+    alert("You must be logged in to make a purchase.");
+    window.location.href = "login.html";
+    return;
+  }
+
+  alert("Thank you! Your payment has been received. We'll confirm your order shortly.");
+  clearCart();
+}
+
+
+
+  function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+ 
+  let existingItem = cart.find(item => item.name === name);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+
+
+  </script>
+  <section class="footer">
+    <div class="footer-top">
+      <div class="feature">
+        <h3>100% Pure</h3>
+        <p>All oils are traditionally extracted without chemicals.</p>
+      </div>
+      <div class="feature">
+        <h3>100% Cruelty Free</h3>
+        <p>Oil is extracted using machines, not animals.</p>
+      </div>
+      <div class="feature">
+        <h3>100% Indian</h3>
+        <p>Our products are completely made in India.</p>
+      </div>
+      <div class="feature">
+        <h3>Always Fresh</h3>
+        <p>Oils packed freshly within 8–10 days of order.</p>
+      </div>
+    </div>
+
+    <div class="footer-mid">
+      <div class="links">
+        <h4>Categories</h4>
+        <ul>
+          <li>Groundnut Oil</li>
+          <li>Coconut Oil</li>
+          <li>Til Oil</li>
+          <li>Kardai Oil</li>
+          <li>Badam Oil</li>
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Useful Links</h4>
+        <ul>
+       <li>   <a href="home.html">HOME</a> </li>
+           <li> <a href="aboutus.html">ABOUT US</a> </li>
+          <li><a href="heathtips.html">HEALTH TIPS</a></li>
+           
+        </ul>
+      </div>
+      <div class="links">
+        <h4>Contact</h4>
+        <p>Udgir, Jalkot Road, Yerame Nagar</p>
+        <p>+91 9095700056</p>
+        <p>dhirajtandle@gmail.com</p>
+      </div>
+      <div class="links">
+        <h4>Follow Us</h4>
+         <div class="social-icons">
+         <a href="https://www.facebook.com/share/16bT93QEgC/"><i class="fab fa-facebook"></i></a>
+         <a href="https://www.instagram.com/udayadhara.udgir?igsh=MWZlMXozdXEzMWtwdA=="> <i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 udaydhara's Natural Oil Store. All Rights Reserved.</p>
+      <p>Privacy | Terms | Refund Policy</p>
+    </div>
+  </section>
+</body>
+</html>

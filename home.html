@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden - Heritage Organic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&family=Poppins:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/home.css" />
+</head>
+<body>
+
+    <header class="top-bar">
+        <div id="cart">
+      <a href="cart.html" style="text-decoration: none; color: inherit;">
+        <i class="fa fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)
+      </a>
+    </div>
+
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search products..." />
+  <button onclick="handleSearch()">Search</button>
+</div>
+      <div class="logo"> 
+            <img src="/projectimgs/udaydhara.png" alt="udaydhara logo" />
+            <span class="brand-name">Golden Haritage Organic</span>
+        </div>
+        <div class="user-options">
+            <a href="login.html"><i class="fa fa-sign-in-alt"></i> Sign in</a>
+            <span>|</span>
+            <a href="createacc.html"><i class="fa fa-user-plus"></i> Create account</a>
+        </div>
+    </header>
+
+    <nav class="menu">
+       
+        <div class="center">
+            <a href="home.html">HOME</a> 
+            <a href="aboutus.html">ABOUT US</a> 
+            <a href="heathtips.html">HEALTH TIPS</a>
+         
+        </div>
+    </nav>
+
+     <section class="banner">
+
+   <div class="text">
+    <h1>Udaydhara</h1>
+      <h1><span class="red">6 YEARS</span> of Pure Excellence in</h1>
+       <h2 class="drop">EVERY DROP!</h2></div>
+
+ <div class="woman">
+   <img src="/projectimgs/add.jpg" alt="Woman pouring oil">
+ </div>
+</section>
+
+    <main class="product-page-content">
+        <h1>Explore Our Product Range</h1>
+
+        <section class="category-section">
+            <h2 class="category-title">Cold-Pressed Oils</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="/projectimgs/groundnut.jpg" alt="Groundnut Oil">
+                    <p>Groundnut Oil</p>
+                    <p class="price">₹320 - 650</p>
+                    <button class="add" data-name="Groundnut Oil" data-price="320">Add to Cart</button>
+                    
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/badamoil.jpg" alt="Badam Oil"> <p>Almond Oil</p>
+                    <p class="price">₹235 – ₹600</p>
+                    <button class="add" data-name="almond Oil" data-price="300">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/javas.jpg" alt="Flaxseed Oil">
+                    <p>Flaxseed Oil</p>
+                    <p class="price">₹160 – ₹850</p>
+                    <button class="add" data-name="Flaxseed Oil" data-price="320">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/kardaitel.jpg" alt="Safflower (Kardai) Oil">
+                    <p>Safflower (Kardai) Oil</p>
+                    <p class="price">₹130 – ₹1600</p>
+                    <button class="add" data-name="Safflower (Kardai)  Oil" data-price="340">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/mohari.jpg" alt="Mustard  Oil">
+                    <p>Mustard Oil</p>
+                    <p class="price">₹220 – ₹850</p>
+                    <button class="add" data-name="Mustard Oil" data-price="120">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/til tel.jpg" alt="sesame Oil"> <p>Sesame Oil</p>
+                    <p class="price">₹200 - 500</p>
+                    <button class="add" data-name="SesameOil" data-price="200">Add to Cart</button>
+                </div>
+                 <div class="card">
+                    <img src="/projectimgs/final1.jpg" alt="Coconut Oil"> <p>Coconut Oil</p>
+                    <p class="price">₹250 - 700</p>
+                    <button class="add" data-name="Coconut Oil" data-price="250">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Premium Dals</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="/projectimgs/toordal.webp" alt="Toor Dal"> <p>Toor Dal</p>
+                    <p class="price">₹150 / 1Kg</p>
+                    <button class="add" data-name="Toor Dal" data-price="150">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/moondal.jpg" alt="Moong Dal"> <p>Moong Dal</p>
+                    <p class="price">₹120 / 1Kg</p>
+                    <button class="add" data-name="Moong Dal" data-price="120">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/chana.jpg" alt="Chana Dal"> <p>Chana Dal</p>
+                    <p class="price">₹110 / 1Kg</p>
+                    <button class="add" data-name="Chana Dal" data-price="110">Add to Cart</button>
+                </div>
+                
+                <div class="card">
+                    <img src="/projectimgs/urad.webp" alt="Urad Dal"> <p>Urad Dal</p>
+                    <p class="price">₹140 / 1Kg</p>
+                    <button class="add" data-name="Urad Dal" data-price="140">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Nutritious Pends</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="/projectimgs/badampend.jpg" alt="Badam Pend">
+                    <p>Badam Pend</p>
+                    <p class="price">₹280 / Kg</p>
+                    <button class="add" data-name="Badam Pend" data-price="280">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/moharipend.jpg" alt="Mohari Pend">
+                    <p>Mohari Pend</p>
+                    <p class="price">₹190 / Kg</p>
+                    <button class="add" data-name="Mohari Pend" data-price="190">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/karpend.jpg" alt="Kardai Pend">
+                    <p>Kardai Pend</p>
+                    <p class="price">₹180 / Kg</p>
+                    <button class="add" data-name="Kardai Pend" data-price="180">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/javass.jpg" alt="Javas Pend">
+                    <p>Javas Pend</p>
+                    <p class="price">₹150 / Kg</p>
+                    <button class="add" data-name="Javas Pend" data-price="150">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/cocopend.jpg" alt="Coconut Pend">
+                    <p>Coconut Pend</p>
+                    <p class="price">₹220 / Kg</p>
+                    <button class="add" data-name="Coconut Pend" data-price="220">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/khobre.jpg" alt="Khobre Pend">
+                    <p>Khobre Pend</p>
+                    <p class="price">₹210 / Kg</p>
+                    <button class="add" data-name="Khobre Pend" data-price="210">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Other Specialities</h2>
+            <div class="product-grid">
+                <div class="card">
+                    <img src="/projectimgs/turmeric.jpg" alt="Turmeric Powder"> <p>Turmeric Powder</p>
+                    <p class="price">₹100 / 250g</p>
+                    <button class="add" data-name="Turmeric Powder" data-price="80">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/chilli.jpg" alt="Chili Powder"> <p>Chili Powder</p>
+                    <p class="price">₹125 / 250g</p>
+                    <button class="add" data-name="Chili Powder" data-price="120">Add to Cart</button>
+                </div>
+                <div class="card">
+                    <img src="/projectimgs/masala.webp" alt="Garam Masala"> <p>Garam Masala</p>
+                    <p class="price">₹150 / 250g</p>
+                    <button class="add" data-name="Garam Masala" data-price="90">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+  <section class="review">
+    <h2>What Our Customers Say!</h2>
+    <div class="review-boxes">
+      <div class="review-card">
+        <p>Best quality lakdi ghani oil. Very much pure than other local vendors. Helpful support and many varieties to choose from.</p>
+        <h4>Amol Gaikwad</h4>
+        <p>Udgir</p>
+      </div>
+      <div class="review-card">
+        <p>Quick delivery. Neat packaging. Authentic taste and smell. Great customer support before purchase.</p>
+        <h4>Sita Parmar</h4>
+        <p>Udgir</p>
+      </div>
+      <div class="review-card">
+        <p>This oil has truly transformed my cooking. The aroma and flavor are unparalleled. I appreciate the natural extraction process!</p>
+        <h4>Ravi Sharma</h4>
+        <p>Udgir</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="footer-top">
+      <div class="feature">
+        <h3>100% Pure</h3>
+        <p>All oils are traditionally extracted without chemicals.</p>
+      </div>
+      <div class="feature">
+        <h3>100% Cruelty Free</h3>
+        <p>Oil is extracted using machines, not animals.</p>
+      </div>
+      <div class="feature">
+        <h3>100% Indian</h3>
+        <p>Our products are completely made in India.</p>
+      </div>
+      <div class="feature">
+        <h3>Always Fresh</h3>
+        <p>Oils packed freshly within 8–10 days of order.</p>
+      </div>
+    </div>
+
+   <div class="footer-mid">
+  <div class="links">
+    <h4>Categories</h4>
+    <ul>
+      <li>Groundnut Oil</li>
+      <li>Coconut Oil</li>
+      <li>Sesame Oil</li>
+      <li>Kardai Oil</li>
+      <li>Badam Oil</li>
+    </ul>
+  </div>
+
+  <div class="links">
+    <h4>Useful Links</h4>
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="aboutus.html">ABOUT US</a></li>
+      <li><a href="heathtips.html">HEALTH TIPS</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="links">
+    <h4>Contact</h4>
+    <p>Udgir, Jalkot Road, Yerame Nagar</p>
+    <p>+91 9095700056</p>
+    <p>dhirajtandle@gmail.com</p>
+  </div>
+
+  <div class="links">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/16bT93QEgC/"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/udayadhara.udgir?igsh=MWZlMXozdXEzMWtwdA=="><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+
+    <div class="footer-bottom">
+      <p>© 2025 udaydhara's Natural Oil Store. All Rights Reserved.</p>
+      <p>Privacy | Terms | Refund Policy</p>
+    </div>
+  </section>
+</body>
+<script>
+
+  updateCartCount();
+
+
+  document.querySelectorAll(".add").forEach((button) => {
+    button.addEventListener("click", function () {
+      const name = this.getAttribute("data-name");
+      const price = parseFloat(this.getAttribute("data-price"));
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existingItem = cart.find(item => item.name === name);
+      if (!existingItem) {
+        cart.push({ name, price, quantity: 1 });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+      }
+    });
+  });
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").innerText = count;
+  }
+
+  function clearCart() {
+    localStorage.removeItem("cart");
+    updateCartCount();
+  }
+
+  function searchStore() {
+    const query = document.getElementById("search-box").value.toLowerCase();
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const matchedItems = cart.filter(item => item.name.toLowerCase().includes(query));
+
+    const resultDiv = document.getElementById("search-results");
+    resultDiv.innerHTML = ""; 
+
+    if (matchedItems.length === 0) {
+      resultDiv.innerHTML = "<p>No items found in your cart.</p>";
+    } else {
+      matchedItems.forEach(item => {
+        resultDiv.innerHTML += `
+          <div class="search-item">
+            <h4>${item.name}</h4>
+            <p>Price: ₹${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+          </div>
+        `;
+      });
+    }
+  }
+  
+  window.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const savedSearch = localStorage.getItem("lastSearch");
+
+    if (savedSearch) {
+      searchInput.value = savedSearch;
+    }
+  });
+
+  function handleSearch() {
+    const searchInput = document.getElementById("searchInput");
+    const query = searchInput.value.trim();
+
+    if (query) {
+   
+      localStorage.setItem("lastSearch", query);
+      
+    
+      alert("Searching for: " + query);
+      
+    }
+  }
+</script>
+
+</script>
+
+</html>
